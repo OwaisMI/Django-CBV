@@ -1,0 +1,20 @@
+{% extends 'advanced_app/basic_app_base.html' %}
+{% block body %}
+
+<h1>Welcome to list of all school</h1>
+
+<ol>
+   
+    {% for school in schools %}
+    <h2>
+        <li>
+            <a href="{{school.id}}">{{school.name}}</a>
+        </li>
+    </h2>
+    {% endfor %}
+    
+
+</ol>
+<a href="{% url 'advanced_app:create' %}" class="btn btn-primary">Add School</a>
+
+{% endblock %}
